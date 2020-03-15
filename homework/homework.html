@@ -57,6 +57,30 @@
             width: 200px;
         }
     </style>
+    <script>
+        function buyClick() {
+            let buyNM = $("#buyName")
+            let buyNum = $("#inputGroupSelect01")
+            let buyAdd = $("#buyAddress")
+            let buyPhn = $("#buyPhone")
+
+            if (buyNM.val() == ""){
+                alert("주문자 이름을 입력하세요!");
+                buyNM.focus();   
+            } else if (buyNum.val() == "수량을 선택하세요"){
+                alert("수량을 선택하세요!");
+                buyNum.focus();
+            } else if (buyAdd.val() == ""){
+                alert("주소를 입력하세요!");
+                buyAdd.focus();
+            } else if (buyPhn.val() == ""){
+                alert("전화 번호를 입력하세요!");
+                buyPhn.focus();
+            } else {
+                alert("주문완료");
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -83,7 +107,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">주문자 이름</span>
             </div>
-            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <input type="text" class="form-control" id="buyName" aria-label="Default" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
@@ -107,17 +131,17 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">주소</span>
             </div>
-            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <input type="text" id="buyAddress" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
         </div>
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">전화번호</span>
             </div>
-            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <input type="text" class="form-control" id="buyPhone" aria-label="Default" aria-describedby="inputGroup-sizing-default">
         </div>
         <div class="btn-box">
-            <button type="button" class="btn btn-primary btn-lg">구매하러 가기</button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="buyClick()">구매하기</button>
         </div>
 
     </div>
